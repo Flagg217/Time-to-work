@@ -64,3 +64,10 @@ setInterval(function () {
     location.reload();
   }
 }, 60000);
+
+// Refresh page at midnight
+setInterval(function () {
+  if (moment().hour() === 0 && moment().minute() === 0) {
+    location.reload();
+  }
+}, 60000);
