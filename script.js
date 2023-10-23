@@ -51,3 +51,10 @@ timeBlock.each(function () {
   var text = localStorage.getItem(hour);
   $(this).find(".description").val(text);
 });
+
+// Clear local storage
+$("#clearBtn").on("click", function () {
+  localStorage.clear();
+  timeBlockText.val("");
+});
+
