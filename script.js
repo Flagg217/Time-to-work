@@ -25,3 +25,17 @@ for (var i = startHour; i <= endHour; i++) {
   row.append(hour, text, save);
   timeBlockContainer.append(row);
 }
+
+// Color code time blocks
+timeBlock.each(function () {
+  var hour = parseInt($(this).find(".hour").text());
+  if (hour < currentHour) {
+    $(this).find(".description").addClass("past");
+  } else if (hour > currentHour) {
+    $(this).find(".description").addClass("future");
+  } else {
+    $(this).find(".description").addClass("present");
+  }
+});
+
+// Save text to local storage
