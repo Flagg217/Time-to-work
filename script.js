@@ -46,3 +46,10 @@ function loadSavedData() {
 }
 
 // Call functions
+updateTime();
+loadSavedData();
+
+// Update time every 15 seconds
+setInterval(function() {
+    updateTime();
+}, 15000);
