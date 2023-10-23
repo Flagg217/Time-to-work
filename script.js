@@ -1,55 +1,15 @@
-var currentDay = $("#currentDay");
+var startHour = 9;
+var endHour = 17;
+var currentHour = moment().hour();
+var currentDay = moment().format("dddd, MMMM Do YYYY");
 var timeBlock = $(".time-block");
 var saveBtn = $(".saveBtn");
-var container = $(".container");
+var textArea = $(".description");
+var timeBlockHour = $(".hour");
+var timeBlockText = $(".description");
+var timeBlockSave = $(".saveBtn");
+var timeBlockRow = $(".row");
+var timeBlockContainer = $(".container");
 
-// Display the current date at the top of the page
-
-$(function () {
-  saveBtn.on("click", function () {
-    var time = $(this).parent().attr("id");
-    var text = $(this).siblings(".description").val();
-    localStorage.setItem(time, text);
-  }
-  );
-
-  function hourUpdater() {
-    var currentHour = moment().hours();
-    timeBlock.each(function () {
-      var blockHour = parseInt($(this).attr("id").split("-")[1]);
-      if (blockHour < currentHour) {
-        $(this).addClass("past");
-      }
-      else if (blockHour === currentHour) {
-        $(this).removeClass("past");
-        $(this).addClass("present");
-      }
-      else {
-        $(this).removeClass("past");
-        $(this).removeClass("present");
-        $(this).addClass("future");
-      }
-    });
-  }
-  hourUpdater();
-
-  
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
-});
+// Display current day
+$("#currentDay").text(currentDay);
