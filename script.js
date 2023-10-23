@@ -5,12 +5,35 @@ var container = $(".container");
 
 // Display the current date at the top of the page
 
-
-
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
+  saveBtn.on("click", function () {
+    var time = $(this).parent().attr("id");
+    var text = $(this).siblings(".description").val();
+    localStorage.setItem(time, text);
+  }
+  );
+
+  function hourUpdater() {
+    var currentHour = moment().hours();
+    timeBlock.each(function () {
+      var blockHour = parseInt($(this).attr("id").split("-")[1]);
+      if (blockHour < currentHour) {
+        $(this).addClass("past");
+      }
+      else if (blockHour === currentHour) {
+        $(this).removeClass("past");
+        $(this).addClass("present");
+      }
+      else {
+        $(this).removeClass("past");
+        $(this).removeClass("present");
+        $(this).addClass("future");
+      }
+    });
+  }
+  hourUpdater();
+
+  
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
