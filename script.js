@@ -65,23 +65,3 @@ setInterval(function () {
   }
 }, 60000);
 
-// Refresh page at midnight
-setInterval(function () {
-  if (moment().hour() === 0 && moment().minute() === 0) {
-    location.reload();
-  }
-}, 60000);
-
-// Refresh page at 8am
-setInterval(function () {
-  if (moment().hour() === 8 && moment().minute() === 0) {
-    location.reload();
-  }
-}, 60000);
-
-// Refresh page at 5pm
-setInterval(function () {
-  if (moment().hour() === 17 && moment().minute() === 0) {
-    location.reload();
-  }
-}, 60000);
