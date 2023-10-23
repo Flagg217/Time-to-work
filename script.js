@@ -58,3 +58,9 @@ $("#clearBtn").on("click", function () {
   timeBlockText.val("");
 });
 
+// Refresh page every hour
+setInterval(function () {
+  if (moment().minute() === 0) {
+    location.reload();
+  }
+}, 60000);
