@@ -44,3 +44,10 @@ saveBtn.on("click", function () {
   var time = $(this).siblings(".hour").text();
   localStorage.setItem(time, text);
 });
+
+// Display text from local storage
+timeBlock.each(function () {
+  var hour = $(this).find(".hour").text();
+  var text = localStorage.getItem(hour);
+  $(this).find(".description").val(text);
+});
