@@ -39,3 +39,8 @@ timeBlock.each(function () {
 });
 
 // Save text to local storage
+saveBtn.on("click", function () {
+  var text = $(this).siblings(".description").val();
+  var time = $(this).siblings(".hour").text();
+  localStorage.setItem(time, text);
+});
