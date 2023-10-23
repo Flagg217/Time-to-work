@@ -71,3 +71,10 @@ setInterval(function () {
     location.reload();
   }
 }, 60000);
+
+// Refresh page at 8am
+setInterval(function () {
+  if (moment().hour() === 8 && moment().minute() === 0) {
+    location.reload();
+  }
+}, 60000);
