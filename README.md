@@ -36,7 +36,7 @@ A simple daily planner that allows users to create and save events for each hour
 4:00pm - 5:00pm: Finish up work
 ```
 
+## Links
 
-## Troubleshooting:
-
-If you are having any problems with the planner, please feel free to contact the developer at [email protected]
+- [GitHub Repository](https://github.com/Flagg217/Time-to-work.git)
+- [Deployed Application](https://flagg217.github.io/Time-to-work/)
