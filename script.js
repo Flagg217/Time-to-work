@@ -3,7 +3,7 @@ var displayTime = $('#currentDay');
 var saveButton = $('.saveBtn');
 var timeBlock = $('.time-block');
 
-// Display current date and time
+// Display current time
 displayTime.text(currentTime);
 
 // Save button event listener
@@ -48,8 +48,3 @@ function loadSavedData() {
 // Call functions
 updateTime();
 loadSavedData();
-
-// Update time every 15 seconds
-setInterval(function() {
-    updateTime();
-}, 15000);
